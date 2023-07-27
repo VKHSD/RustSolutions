@@ -529,7 +529,7 @@ async def quarry(ctx, multi: float = 3, diesel: int = 1):
     embed = Embed(title="Quarry and Excavator Results", color=Color.from_rgb(32, 101, 141))
 
     quarry_output = f"{diesel} dieselwill produce {ceil(1000 * diesel * multi)} sulfur "
-    quarry_output += f"{ceil(100 * diesel * multi)} hqm or {ceil(1000 * diesel * multi)} metal and {ceil(5000 * diesel * multi)} stone at quarry"
+    quarry_output += f"{ceil(50 * diesel * multi)} hqm or {ceil(1000 * diesel * multi)} metal and {ceil(5000 * diesel * multi)} stone at quarry"
     embed.add_field(name="Quarry Output", value=quarry_output, inline=False)
 
     quarry_runtime_seconds = int(2.17 * 60 * diesel) 
@@ -539,7 +539,7 @@ async def quarry(ctx, multi: float = 3, diesel: int = 1):
     embed.add_field(name="Quarry Runtime", value=quarry_runtime, inline=False)
 
     excavator_output = f"{diesel} diesel will produce {ceil(2000 * diesel * multi)} sulfur "
-    excavator_output += f"{ceil(200 * diesel * multi)} hqm {ceil(5000 * diesel * multi)} metal or {ceil(10000 * diesel * multi)} stone at excavator"
+    excavator_output += f"{ceil(100 * diesel * multi)} hqm {ceil(5000 * diesel * multi)} metal or {ceil(10000 * diesel * multi)} stone at excavator"
     embed.add_field(name="Excavator Output", value=excavator_output, inline=False)
 
     excavator_runtime_seconds = 2 * 60 * diesel  
