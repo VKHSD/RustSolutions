@@ -50,13 +50,14 @@ async def clear_error(ctx, error):
 @client.command()
 async def commands(ctx):
     await ctx.send(f'".craft type amount" pure sulfur to craft a type of explosive, ex: ".craft c4/rocket 8"\n'
-                   f'".raid string" example, ".raid 1 wood wall, 3 hqm walls, 2 metal doors, 1 sheet door\n'
+                   f'".wall level amount" calculates explosive types needed, avail: wood, stone, metal, hqm\n'
+                   f'".door type amount" calculates explosive types needed, avail: wood, sheet, metal, garage, heww, hesw\n'
+                   f'".raid string" example" ".raid 1 wood door, 1 sheet door, 1 garage door, 1 metal door, 1 wood wall, 1 stone wall, 1 metal wall, 1 hqm wall, 1 heww, 1 hesw"\n'
+                   f'".raidex string" example: ".raid 1 wood door, 1 sheet door, 1 garage door, 1 metal door, 1 wood wall, 1 stone wall, 1 metal wall, 1 hqm wall, 1 heww, 1 hesw"\n'
+                   f'this modification of .raid calculates the cheapest pathway to raid any combination of objects. although, it may tell you 1 less explosive ammo than needed. but,\n'
+                   f'there is a 5% leniency in the programming which should give the raider more than enough to complete the raid'
                    f'".quarry multiplier diesel" estimates the time and yield of any number of diesel for a quarry\n'
-                   f'\n'
-                   f'.play youtube-link\n'
-                   f'.skip\n'
-                   f'.queue\n'
-                   f'.leave\n')
+                   f'\n')
 
 
 @client.command()
