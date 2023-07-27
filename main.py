@@ -264,10 +264,10 @@ async def raid(ctx, *, query: str):
         split_item = item.split(' ', 1)
         if len(split_item) == 2:
             amount, level = split_item
-            amount = int(amount)  
-        else:  
+            amount = int(amount)  # ensure amount is an integer
+        else:  # there was no amount given, default to 1
             amount = 1
-            level = split_item[0]  
+            level = split_item[0]  # the item is the level
         if 'wall' in level:
             c4_needed, rockets_needed, sulfur_needed, sulfur_c4, sulfur_rockets = await wall(ctx, level.split(' ')[0],
                                                                                              amount, False)
@@ -278,10 +278,22 @@ async def raid(ctx, *, query: str):
         rockets_total += rockets_needed
         sulfur_total_c4 += sulfur_c4
         sulfur_total_rockets += sulfur_rockets
-        message += f"For {amount} {level}: {sulfur_needed} sulfur ({c4_needed} c4 and {rockets_needed} rockets)\n"
-    message += f"Total sulfur needed for the raid: {sulfur_total} ({c4_total} c4 and {rockets_total} rockets)\n"
-    message += f"sulfur needed for {ceil(sulfur_total_c4 / 2200)} c4 only: {sulfur_total_c4}\n"
-    message += f"sulfur needed for {ceil(sulfur_total_rockets / 1400)} rockets only: {sulfur_total_rockets}"
+        message += f"For {amount} {level}: {sulfur_needed} sulfur"
+        if c4_needed > 0 and rockets_needed > 0:
+            message += f" ({c4_needed} C4 and {rockets_needed} rockets)\n"
+        elif c4_needed > 0:
+            message += f" ({c4_needed} C4)\n"
+        elif rockets_needed > 0:
+            message += f" ({rockets_needed} rockets)\n"
+    message += f"Total sulfur needed for the raid: {sulfur_total}"
+    if c4_total > 0:
+        message += f" ({c4_total} C4"
+    if rockets_total > 0:
+        message += f" and {rockets_total} rockets)\n"
+    if c4_total > 0:
+        message += f"Sulfur needed for {c4_total} C4 only: {ceil(c4_total * 2200)}\n"
+    if rockets_total > 0:
+        message += f"Sulfur needed for {rockets_total} rockets only: {ceil(rockets_total * 1400)}"
 
     embed = Embed(title="Raid Information", description=message, color=0x3498db)
     await ctx.send(embed=embed)
