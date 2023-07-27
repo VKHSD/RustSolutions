@@ -55,7 +55,7 @@ async def commands(ctx):
                    f'".raid string" example" ".raid 1 wood door, 1 sheet door, 1 garage door, 1 metal door, 1 wood wall, 1 stone wall, 1 metal wall, 1 hqm wall, 1 heww, 1 hesw"\n'
                    f'".raidex string" example: ".raid 1 wood door, 1 sheet door, 1 garage door, 1 metal door, 1 wood wall, 1 stone wall, 1 metal wall, 1 hqm wall, 1 heww, 1 hesw"\n'
                    f'this modification of .raid calculates the cheapest pathway to raid any combination of objects. although, it may tell you 1 less explosive ammo than needed. but,\n'
-                   f'there is a 5% leniency in the programming which should give the raider more than enough to complete the raid'
+                   f'there is a 5% leniency in the programming which should give the raider more than enough to complete the raid\n'
                    f'".quarry multiplier diesel" estimates the time and yield of any number of diesel for a quarry\n'
                    f'\n')
 
