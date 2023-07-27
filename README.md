@@ -14,3 +14,6 @@ explosive ammo at the end sum total, saying "about {explo*1.05} explosive-bullet
 buy me a coff~.. I'm just kidding. I'm not that poor to ask for $2 XDDD. 
 
 dm me on discord if you have any suggestions, my username is 'lsd2'
+
+You can install the libraries using the command, 
+pip install -r requirements.txt 
